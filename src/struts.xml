@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/*
+ * $Id$
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+-->
+
+<!--
+    When declaring beans in this file you must either use name="struts" or don't name the bean at all.
+
+    The name="struts" must be used when alias was defined in {@link org.apache.struts2.config.DefaultBeanSelectionProvider} -
+    it is then the default bean's name and {@link org.apache.struts2.config.DefaultBeanSelectionProvider} links name "struts"
+    with "default" (aliasing it)
+
+    If name won't be defined then the "default" value will be used {@link com.opensymphony.xwork2.inject.Container#DEFAULT_NAME}
+    and {@link com.opensymphony.xwork2.inject.Inject}
+-->
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!--包名，命名空间=前导路径，此处表示项目根目录-->
+    <package name="default" namespace="/" extends="struts-default">
+
+        <!--负责导向：method="helloWord" helloWord是默认执行的HelloWorldAction类中的方法-->
+        <action name="helloWorld" class="cn.julse.predomSSH.action.HelloWorldAction" method="helloWorld">
+            <result name="helloWorld">/HelloWorld.jsp</result>
+            <result  >/frame.jsp</result>
+        </action>
+
+    </package>
+    <package name="home" namespace="/" extends="struts-default">
+        <action name="home" class="cn.julse.predomSSH.action.HomeAction">
+            <result name="login">/adminMain.jsp</result>
+            <result>/adminMain.jsp</result>
+        </action>
+    </package>
+</struts>
