@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.predom;
+package cn.julse.predomSSH.db.predom;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.DBMain;
+import cn.julse.predomSSH.db.DBMain;
 
 /**
  * @author »ÆÑÇ¶«

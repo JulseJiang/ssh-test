@@ -9,4 +9,23 @@ public class HomeAction extends ActionSupport{
    public String login(){
        return "login";
    }
+
+    /**
+     * 顶部页面
+     * @return
+     */
+   public String top(){
+       return "top";
+   }
+
+    /**
+     * 左侧页面
+     * @return
+     */
+    public String left(){
+        return "top";
+    }
+    public String main(){
+        return "main";
+    }
 }

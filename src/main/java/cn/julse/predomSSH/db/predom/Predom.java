@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.predom;
+package cn.julse.predomSSH.db.predom;
 
 /**
  * @author »ÆÑÇ¶«

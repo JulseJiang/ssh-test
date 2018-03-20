@@ -1,7 +1,10 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.function;
+package cn.julse.predomSSH.db.function;
+
+import cn.julse.predomSSH.db.function.Function;
+import cn.julse.predomSSH.db.function.FunctionDAO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

@@ -1,20 +1,20 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.user;
+package cn.julse.predomSSH.db.user;
+
+import cn.julse.predomSSH.db.DBMain;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.DBMain;
-import com.ccniit.bookshop.db.userGroup.UserGroupDAO;
 
 /**
  * @author 黄亚东
  *
  */
-public class UserDAO extends DBMain<Users>{
+public class UserDAO extends DBMain<Users> {
 
 	public void add(Users user) throws ClassNotFoundException, SQLException {
 		sql = "insert users(userGroup_id,user_name,user_address,user_code,user_phone,user_email,user_password) values(?,?,?,?,?,?,?)";
@@ -134,7 +134,7 @@ public class UserDAO extends DBMain<Users>{
 	
 	/**
 	 * 对数据库中的数据封装成Users类传回
-	 * @param rs
+//	 * @param rs
 	 * @return
 	 * @throws SQLException
 	 */

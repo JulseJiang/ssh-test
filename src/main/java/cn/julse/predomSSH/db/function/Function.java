@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.function;
+package cn.julse.predomSSH.db.function;
 
 /**
  * @author »ÆÑÇ¶«

@@ -1,12 +1,13 @@
-package com.ccniit.bookshop.db.comment;
+package cn.julse.predomSSH.db.comment;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.DBMain;
-import com.ccniit.bookshop.db.book.Book;
-import com.ccniit.bookshop.db.book.BookDAO;
+import cn.julse.predomSSH.db.comment.Comment;
+import cn.julse.predomSSH.db.DBMain;
+import cn.julse.predomSSH.db.book.Book;
+import cn.julse.predomSSH.db.book.BookDAO;
 
 public class CommentDAO extends DBMain<Comment>
 {

@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.buy;
+package cn.julse.predomSSH.db.buy;
 
-import com.ccniit.bookshop.db.book.Book;
-import com.ccniit.bookshop.db.user.Users;
+import cn.julse.predomSSH.db.book.Book;
+import cn.julse.predomSSH.db.user.Users;
 
 /**
  * @author »ÆÑÇ¶«

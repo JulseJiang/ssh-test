@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.buy;
+package cn.julse.predomSSH.db.buy;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.DBMain;
-import com.ccniit.bookshop.db.book.BookDAO;
-import com.ccniit.bookshop.db.user.UserDAO;
+import cn.julse.predomSSH.db.DBMain;
+import cn.julse.predomSSH.db.book.BookDAO;
+import cn.julse.predomSSH.db.user.UserDAO;
 
 /**
  * @author »ÆÑÇ¶«

@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.orders;
+package cn.julse.predomSSH.db.orders;
 
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.buy.Buy;
+import cn.julse.predomSSH.db.buy.Buy;
 
 /**
  * @author »ÆÑÇ¶«

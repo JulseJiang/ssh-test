@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.userGroup;
+package cn.julse.predomSSH.db.userGroup;
 
 import java.util.Vector;
 
-import com.ccniit.bookshop.db.user.Users;
+import cn.julse.predomSSH.db.user.Users;
 
 /**
  * @author »ÆÑÇ¶«

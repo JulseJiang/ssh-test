@@ -1,16 +1,17 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.userGroup;
+package cn.julse.predomSSH.db.userGroup;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import com.ccniit.bookshop.db.DBMain;
-import com.ccniit.bookshop.db.user.UserDAO;
-import com.ccniit.bookshop.db.user.Users;
+import cn.julse.predomSSH.db.userGroup.UserGroup;
+import cn.julse.predomSSH.db.DBMain;
+import cn.julse.predomSSH.db.user.UserDAO;
+import cn.julse.predomSSH.db.user.Users;
 
 /**
  * @author »ÆÑÇ¶«

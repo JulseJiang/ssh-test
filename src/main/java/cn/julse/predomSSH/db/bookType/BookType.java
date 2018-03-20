@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.bookType;
+package cn.julse.predomSSH.db.bookType;
 
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.book.Book;
+import cn.julse.predomSSH.db.book.Book;
 
 /**
  * BookType表的数据封装类

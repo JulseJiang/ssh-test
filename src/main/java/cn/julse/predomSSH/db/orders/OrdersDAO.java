@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.orders;
+package cn.julse.predomSSH.db.orders;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,9 +9,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.ccniit.bookshop.db.DBMain;
-import com.ccniit.bookshop.db.buy.Buy;
-import com.ccniit.bookshop.db.buy.BuyDAO;
+import cn.julse.predomSSH.db.orders.Orders;
+import cn.julse.predomSSH.db.DBMain;
+import cn.julse.predomSSH.db.buy.Buy;
+import cn.julse.predomSSH.db.buy.BuyDAO;
 
 /**
  * @author Úù½¡

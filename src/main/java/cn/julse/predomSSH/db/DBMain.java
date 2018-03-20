@@ -2,7 +2,7 @@
  * 用于代码复用，即放置所有DB表操作类中的相同代码
  * 是所有DB表操作类的父类
  */
-package com.ccniit.bookshop.db;
+package cn.julse.predomSSH.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

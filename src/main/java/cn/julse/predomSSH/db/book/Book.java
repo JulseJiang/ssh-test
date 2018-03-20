@@ -1,9 +1,9 @@
-package com.ccniit.bookshop.db.book;
+package cn.julse.predomSSH.db.book;
 
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.bookType.BookType;
-import com.ccniit.bookshop.db.comment.Comment;
+import cn.julse.predomSSH.db.bookType.BookType;
+import cn.julse.predomSSH.db.comment.Comment;
 
 public class Book
 {

@@ -1,12 +1,12 @@
-package com.ccniit.bookshop.db.bookType;
+package cn.julse.predomSSH.db.bookType;
+
+import cn.julse.predomSSH.db.DBMain;
+import cn.julse.predomSSH.db.bookType.BookType;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.DBMain;
-import com.ccniit.bookshop.db.book.Book;
-import com.ccniit.bookshop.db.book.BookDAO;
 
 public class BookTypeDAO extends DBMain<BookType>
 {

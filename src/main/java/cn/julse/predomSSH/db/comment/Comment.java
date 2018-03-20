@@ -1,6 +1,6 @@
-package com.ccniit.bookshop.db.comment;
+package cn.julse.predomSSH.db.comment;
 
-import com.ccniit.bookshop.db.book.Book;
+import cn.julse.predomSSH.db.book.Book;
 
 public class Comment
 {

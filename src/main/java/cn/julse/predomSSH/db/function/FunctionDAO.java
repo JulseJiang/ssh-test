@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.function;
+package cn.julse.predomSSH.db.function;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.ccniit.bookshop.db.DBMain;
+import cn.julse.predomSSH.db.DBMain;
 
 /**
  * @author »ÆÑÇ¶«
@@ -16,7 +16,7 @@ import com.ccniit.bookshop.db.DBMain;
 public class FunctionDAO extends DBMain<Function> {
 
 	@Override
-	public void add(Function dataObj) throws ClassNotFoundException,
+	public void add(cn.julse.predomSSH.db.function.Function dataObj) throws ClassNotFoundException,
 			SQLException {
 		sql = "insert functions(function_name,function_note) values(?,?)";
 		pst = this.getPreparedStatement(sql);

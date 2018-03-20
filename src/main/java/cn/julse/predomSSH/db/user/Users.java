@@ -1,9 +1,9 @@
 /**
  * 
  */
-package com.ccniit.bookshop.db.user;
+package cn.julse.predomSSH.db.user;
 
-import com.ccniit.bookshop.db.userGroup.UserGroup;
+import cn.julse.predomSSH.db.userGroup.UserGroup;
 
 /**
  * @author »ÆÑÇ¶«
