@@ -8,7 +8,7 @@
 <body>
 <h1 align="center">登陆</h1>
 <%--<%=request.getContextPath()%>--%>
-<form name="form1" method="post" action="/home!login.action">
+<form name="form1" method="post" action="/home/home.action">
 <table width="90%"  border="1" align="center" cellpadding="1" cellspacing="1">
   <tr>
     <td width="19%" height="30">登陆名：</td>

@@ -47,8 +47,8 @@
         </action>
 
     </package>
-    <package name="home" namespace="/" extends="struts-default">
-        <action name="home" class="cn.julse.predomSSH.action.HomeAction">
+    <package name="home" namespace="/home" extends="struts-default">
+        <action name="home" class="cn.julse.predomSSH.action.HomeAction" method="login">
             <result name="login">/adminMain.jsp</result>
             <result name="top">/top.jsp</result>
             <result name="left">/left.jsp</result>
@@ -56,8 +56,10 @@
         </action>
     </package>
     <package name="user" namespace="/user" extends="struts-default">
-        <action name="user" class="cn.julse.predomSSH.action.UserAction">
-            <result name="list">/users/users.htm</result>
+        <action name="user" class="cn.julse.predomSSH.action.UserAction" method="list">
+            <result name="list">/users/users.jsp</result>
+            <result name="openModify">/users/modifyUsers.jsp</result>
+            <result name="modify">/users/success.jsp</result>
         </action>
     </package>
 </struts>

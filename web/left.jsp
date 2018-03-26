@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<p><a href="users/users.htm" target="mainFrame">用户管理</a></p>
+<p><a href="<%=request.getContextPath()%>/user/user.action" target="mainFrame">用户管理</a></p>
 <p>&nbsp;</p>
 <p><a href="userGroups/userGroup.htm" target="mainFrame">用户组管理</a></p>
 <p>&nbsp;</p>
