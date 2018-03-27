@@ -53,6 +53,7 @@
             <result name="top">/top.jsp</result>
             <result name="left">/left.jsp</result>
             <result name="main">/main.jsp</result>
+            <result name="input">/login.jsp</result>
         </action>
     </package>
     <package name="user" namespace="/user" extends="struts-default">

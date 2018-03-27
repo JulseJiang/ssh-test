@@ -11,14 +11,14 @@ import java.util.ArrayList;
 
 public class UserAction extends ActionSupport {
     private int user_id;
+    private Users newUser = new Users();
+    //=====================
     private Users user;
     private ArrayList<Users> userList;
     private ArrayList<UserGroup> ugList;
     //=====================
     private UserDAO userDAO = new UserDAO();
     private UserGroupDAO userGroupDAO = new UserGroupDAO();
-
-
     public String list(){
         try {
             userList=userDAO.getAll();
@@ -41,11 +41,21 @@ public class UserAction extends ActionSupport {
         return "openModify";
     }
     public String modify(){
-
+        try {
+            userDAO.modify(newUser);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return "modify";
     }
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public Users getNewUser() {
+        return newUser;
     }
 
     public ArrayList<Users> getUserList() {
