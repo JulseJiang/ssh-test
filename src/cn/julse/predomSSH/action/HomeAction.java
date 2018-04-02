@@ -5,6 +5,7 @@ import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
+import org.apache.struts2.interceptor.validation.SkipValidation;
 
 /**
  * 登录，进入主界面
@@ -13,7 +14,13 @@ import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 public class HomeAction extends ActionSupport{
    private String user_email;
    private String user_password;
-
+    /**
+     * 打开login,不进行验证
+     */
+    @SkipValidation
+    public String home(){
+        return "home";
+    }
    @Validations(
            //验证规则
            requiredStrings = {

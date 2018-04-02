@@ -37,9 +37,43 @@
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+    <!--abstract="true":这个包不生成对象，不直接处理请求，只用于被继承-->
+    <package name="my-deault" namespace="/" extends="struts-default" abstract="true">
+        <interceptors>
+            <!--<interceptor-stack name="paramsPrepareParamsStack">-->
+            <!--如果不修改拦截器的名字，就会覆盖父类的拦截器，我们这里选择追加-->
+            <interceptor-stack name="myDefaultStack">
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="datetime"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="params"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="actionMappingParams"/>
+                <interceptor-ref name="params"/>
+                <interceptor-ref name="conversionError"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                    <!--追加的方法，解释性注解-->
+                    <param name="validateAnnotatedMethodOnly">true</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!--执行自定义的拦截器myDefaultStack不执行-->
+        <default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>
+    </package>
     <!--包名，命名空间=前导路径，此处表示项目根目录-->
-    <package name="default" namespace="/" extends="struts-default">
-
+    <package name="default" namespace="/" extends="my-deault">
         <!--负责导向：method="helloWord" helloWord是默认执行的HelloWorldAction类中的方法-->
         <action name="helloWorld" class="cn.julse.predomSSH.action.HelloWorldAction" method="helloWorld">
             <result name="helloWorld">/HelloWorld.jsp</result>
@@ -47,16 +81,17 @@
         </action>
 
     </package>
-    <package name="home" namespace="/home" extends="struts-default">
+    <package name="home" namespace="/home" extends="my-deault">
         <action name="home" class="cn.julse.predomSSH.action.HomeAction" method="login">
             <result name="login">/adminMain.jsp</result>
             <result name="top">/top.jsp</result>
             <result name="left">/left.jsp</result>
             <result name="main">/main.jsp</result>
             <result name="input">/login.jsp</result>
+            <!--<result name="home">/login.jsp</result>-->
         </action>
     </package>
-    <package name="user" namespace="/user" extends="struts-default">
+    <package name="user" namespace="/user" extends="my-deault">
         <action name="user" class="cn.julse.predomSSH.action.UserAction" method="list">
             <result name="list">/users/users.jsp</result>
             <result name="openModify">/users/modifyUsers.jsp</result>
