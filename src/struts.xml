@@ -37,12 +37,18 @@
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+    <!--允许动态访问home!login.action-->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <!--abstract="true":这个包不生成对象，不直接处理请求，只用于被继承-->
     <package name="my-deault" namespace="/" extends="struts-default" abstract="true">
         <interceptors>
+            <!--申明自定义登录拦截器-->
+            <interceptor name="loginInterceptor" class="cn.julse.predomSSH.interceptor.LoginInterceptor"/>
             <!--<interceptor-stack name="paramsPrepareParamsStack">-->
             <!--如果不修改拦截器的名字，就会覆盖父类的拦截器，我们这里选择追加-->
             <interceptor-stack name="myDefaultStack">
+                <!--使用自定义登录拦截器-->
+                <interceptor-ref name="loginInterceptor"/>
                 <interceptor-ref name="exception"/>
                 <interceptor-ref name="alias"/>
                 <interceptor-ref name="i18n"/>
@@ -57,11 +63,14 @@
                 <interceptor-ref name="fileUpload"/>
                 <interceptor-ref name="staticParams"/>
                 <interceptor-ref name="actionMappingParams"/>
-                <interceptor-ref name="params"/>
+                <interceptor-ref name="params">
+                    <!--<param name="" todo-->
+                    <param name="excludeParams">dojo\..*,^sturts\..*</param>
+                </interceptor-ref>
                 <interceptor-ref name="conversionError"/>
                 <interceptor-ref name="validation">
                     <param name="excludeMethods">input,back,cancel,browse</param>
-                    <!--追加的方法，解释性注解-->
+                    <!--追加的方法，解释性注解。不全局注解-->
                     <param name="validateAnnotatedMethodOnly">true</param>
                 </interceptor-ref>
                 <interceptor-ref name="workflow">
@@ -71,6 +80,9 @@
         </interceptors>
         <!--执行自定义的拦截器myDefaultStack不执行-->
         <default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>
+        <global-results>
+            <result name="notLogin"></result>
+        </global-results>
     </package>
     <!--包名，命名空间=前导路径，此处表示项目根目录-->
     <package name="default" namespace="/" extends="my-deault">

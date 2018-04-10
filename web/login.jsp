@@ -14,7 +14,7 @@
 <br>
 <h2 align="center"><s:fielderror/></h2>
 <%--<%=request.getContextPath()%>--%>
-<form name="form1" method="post" action="/home/home.action">
+<form name="form1" method="post" action="/home/home!login.action">
 <table width="90%"  border="1" align="center" cellpadding="1" cellspacing="1">
   <tr>
     <td width="19%" height="30">登陆名：</td>

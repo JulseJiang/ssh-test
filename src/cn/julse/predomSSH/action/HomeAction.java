@@ -17,28 +17,28 @@ public class HomeAction extends ActionSupport{
     /**
      * 打开login,不进行验证
      */
-    @SkipValidation
+//    @SkipValidation
     public String home(){
         return "home";
     }
-   @Validations(
-           //验证规则
-           requiredStrings = {
-                   /**
-                    * fieldName:被验证的变量名
-                    * message：出错提示信息
-                    * shortCircuit：短路（遇到错误不继续进行）
-                    * trim：去掉头尾空格
-                    * type：ValidatorType.FIELD只对一个字段进行验证
-                    * key:国际化
-                    */
-                @RequiredStringValidator(fieldName = "user_email",message = "email can not be none",shortCircuit = true,trim = true,type = ValidatorType.FIELD),
-                @RequiredStringValidator(fieldName = "user_password",message = "user_password can not be none",shortCircuit = true,trim = true,type = ValidatorType.FIELD)
-           },
-           emails = {
-                @EmailValidator(fieldName = "user_email",message = "email are not true",shortCircuit = true,type = ValidatorType.FIELD)
-           }
-   )
+//   @Validations(
+//           //验证规则
+//           requiredStrings = {
+//                   /**
+//                    * fieldName:被验证的变量名
+//                    * message：出错提示信息
+//                    * shortCircuit：短路（遇到错误不继续进行）
+//                    * trim：去掉头尾空格
+//                    * type：ValidatorType.FIELD只对一个字段进行验证
+//                    * key:国际化
+//                    */
+//                @RequiredStringValidator(fieldName = "user_email",message = "email can not be none",shortCircuit = true,trim = true,type = ValidatorType.FIELD),
+//                @RequiredStringValidator(fieldName = "user_password",message = "user_password can not be none",shortCircuit = true,trim = true,type = ValidatorType.FIELD)
+//           },
+//           emails = {
+//                @EmailValidator(fieldName = "user_email",message = "email are not true",shortCircuit = true,type = ValidatorType.FIELD)
+//           }
+//   )
    public String login(){
        return "login";
    }
