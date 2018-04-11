@@ -11,6 +11,8 @@
     <title>未登录</title>
 </head>
 <body>
-    你还未登录，请登录<<br>
+    你还未登录，请登录<br>
+    <%--在html中的斜杠表示从服务器端口开始的路径--%>
+<a href="<%=request.getContextPath()%>/home/home!home.action"><input type="button" value="登录"></a>
 </body>
 </html>

@@ -1,10 +1,12 @@
 package cn.julse.predomSSH.action;
 
+import cn.julse.predomSSH.db.user.Users;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
 /**
@@ -48,6 +50,8 @@ public class HomeAction extends ActionSupport{
      * @return
      */
    public String top(){
+//       todo:后续开发从数据库中获取的用户信息 new Users()
+       ServletActionContext.getRequest().getSession().setAttribute("user",new Users());
        return "top";
    }
 

@@ -23,13 +23,15 @@ public class LoginInterceptor implements Interceptor {
     public String intercept(ActionInvocation invocation) throws Exception {
         //创建不需要验证的功能路径列表
         ArrayList<String> notLoginList = new ArrayList<String>();
-        notLoginList.add("/home!home.action");
-        notLoginList.add("/home!login.action");
+        notLoginList.add("home/home!home.action");
+        notLoginList.add("home/home!login.action");
         //获得当前请求路径
         HttpServletRequest request = ServletActionContext.getRequest();
         String path = request.getServletPath();//当前路径，contextPath是项目路径
+        System.out.println("path"+path);
         //如果当前请求路径在不需要验证路径列表中，就放行
         if (notLoginList.contains(path)){
+            System.out.println("放行");
             invocation.invoke();//放行
         }else {
             if (request.getSession().getAttribute("user")!=null){
@@ -37,6 +39,7 @@ public class LoginInterceptor implements Interceptor {
             }
         }
         //否则进行登陆验证
+        System.out.println("需要进行登陆验证");
         return "notLogin";
     }
 }

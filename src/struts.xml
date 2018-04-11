@@ -48,7 +48,7 @@
             <!--如果不修改拦截器的名字，就会覆盖父类的拦截器，我们这里选择追加-->
             <interceptor-stack name="myDefaultStack">
                 <!--使用自定义登录拦截器-->
-                <interceptor-ref name="loginInterceptor"/>
+                <!--<interceptor-ref name="loginInterceptor"/>-->
                 <interceptor-ref name="exception"/>
                 <interceptor-ref name="alias"/>
                 <interceptor-ref name="i18n"/>
@@ -81,8 +81,9 @@
         <!--执行自定义的拦截器myDefaultStack不执行-->
         <default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>
         <global-results>
-            <result name="notLogin"></result>
+            <result name="notLogin">/notLogin.jsp</result>
         </global-results>
+        <global-allowed-methods>login,top</global-allowed-methods>
     </package>
     <!--包名，命名空间=前导路径，此处表示项目根目录-->
     <package name="default" namespace="/" extends="my-deault">
@@ -94,13 +95,13 @@
 
     </package>
     <package name="home" namespace="/home" extends="my-deault">
-        <action name="home" class="cn.julse.predomSSH.action.HomeAction" method="login">
+        <action name="home" class="cn.julse.predomSSH.action.HomeAction">
             <result name="login">/adminMain.jsp</result>
             <result name="top">/top.jsp</result>
             <result name="left">/left.jsp</result>
             <result name="main">/main.jsp</result>
             <result name="input">/login.jsp</result>
-            <!--<result name="home">/login.jsp</result>-->
+            <result name="home">/login.jsp</result>
         </action>
     </package>
     <package name="user" namespace="/user" extends="my-deault">
