@@ -41,6 +41,10 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <!--abstract="true":这个包不生成对象，不直接处理请求，只用于被继承-->
     <package name="my-deault" namespace="/" extends="struts-default" abstract="true">
+        <result-types>
+            <!--没有找到struts2的json类 todo-->
+            <result-type name="json" class="org.apache.struts2"></result-type>
+        </result-types>
         <interceptors>
             <!--申明自定义登录拦截器-->
             <interceptor name="loginInterceptor" class="cn.julse.predomSSH.interceptor.LoginInterceptor"/>
@@ -48,7 +52,7 @@
             <!--如果不修改拦截器的名字，就会覆盖父类的拦截器，我们这里选择追加-->
             <interceptor-stack name="myDefaultStack">
                 <!--使用自定义登录拦截器-->
-                <!--<interceptor-ref name="loginInterceptor"/>-->
+                <interceptor-ref name="loginInterceptor"/>
                 <interceptor-ref name="exception"/>
                 <interceptor-ref name="alias"/>
                 <interceptor-ref name="i18n"/>
@@ -83,7 +87,7 @@
         <global-results>
             <result name="notLogin">/notLogin.jsp</result>
         </global-results>
-        <global-allowed-methods>login,top</global-allowed-methods>
+        <global-allowed-methods>login,top,home</global-allowed-methods>
     </package>
     <!--包名，命名空间=前导路径，此处表示项目根目录-->
     <package name="default" namespace="/" extends="my-deault">
@@ -109,6 +113,9 @@
             <result name="list">/users/users.jsp</result>
             <result name="openModify">/users/modifyUsers.jsp</result>
             <result name="modify">/users/success.jsp</result>
+            <result name="jsonList" type="json">
+                <param name="root">userList</param>
+            </result>
         </action>
     </package>
 </struts>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--schemaLocation:检查开发人员的语法是否符合spring风格-->
+    <bean class="cn.julse.predomSSH.spring.TestBean" id="testBean">
+        <!--bean:创建共享对象，以单例的模式来节省空间-->
+    </bean>
+</beans>

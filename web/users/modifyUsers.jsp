@@ -8,12 +8,13 @@
 
 <body>
 <h1 align="center">修改用户</h1>
-<form name="form1" method="post" action="">
+<form name="form1" method="post" action="<%=request.getContextPath()%>/user/user!modify.action">
   <table width="90%"  border="1" cellspacing="1" cellpadding="1">
 
     <tr>
-      <td width="23%" height="30">姓名</td>
-      <td width="77%" height="30"><input name="textfield" type="text" value="zxh"></td>
+      <td width="20%" height="30">姓名</td>
+      <td width="50%" height="30"><input name="textfield" type="text" value="zxh"></td>
+      <td width="30%" height="30" rowspan="9"></td>
     </tr>
     <tr>
       <td height="30">地址</td>
@@ -39,6 +40,10 @@
           <option value="${ug.usergroup_note}"></option>
         </C:forEach>
       </select></td>
+    </tr>
+    <tr>
+      <td height="30">头像</td>
+      <td height="30"><input type="file" name="user_pic"></td>
     </tr>
     <tr>
       <td height="30" colspan="2" align="center"><input type="submit" name="Submit2" value="返回"> 

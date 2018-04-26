@@ -117,7 +117,7 @@ public class UserDAO extends DBMain<Users> {
 	
 	public void modify(Users newUser) throws ClassNotFoundException,
 			SQLException {
-		sql = "update users set userGroup_id = ?,user_name=?,user_address=?,user_code=?,user_phone=?,user_email=?,user_password=? where user_id = ?";
+		sql = "update users set userGroup_id = ?,user_name=?,user_address=?,user_code=?,user_phone=?,user_email=?,user_password=?,user_pic=? where user_id = ?";
 		pst = this.getPreparedStatement(sql);
 		pst.setInt(1, newUser.getUserGroup_id());
 		pst.setString(2, newUser.getUser_name());
@@ -126,7 +126,8 @@ public class UserDAO extends DBMain<Users> {
 		pst.setString(5, newUser.getUser_phone());
 		pst.setString(6, newUser.getUser_email());
 		pst.setString(7, newUser.getUser_password());
-		pst.setInt(8, newUser.getUser_id());
+		pst.setString(8, newUser.getUser_pic());
+		pst.setInt(9, newUser.getUser_id());
 		pst.executeUpdate();
 		this.realese();
 		
@@ -148,6 +149,7 @@ public class UserDAO extends DBMain<Users> {
 		u.setUser_phone(rst.getString("user_phone"));
 		u.setUser_email(rst.getString("user_email"));
 		u.setUser_password(rst.getString("user_password"));
+		u.setUser_pic(rst.getString("user_pic"));
 		return u;
 	}
 	

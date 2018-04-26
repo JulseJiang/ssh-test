@@ -42,6 +42,8 @@ public class HomeAction extends ActionSupport{
 //           }
 //   )
    public String login(){
+       //       todo:后续开发从数据库中获取的用户信息 new Users()
+       ServletActionContext.getRequest().getSession().setAttribute("user",new Users());
        return "login";
    }
 
@@ -50,8 +52,6 @@ public class HomeAction extends ActionSupport{
      * @return
      */
    public String top(){
-//       todo:后续开发从数据库中获取的用户信息 new Users()
-       ServletActionContext.getRequest().getSession().setAttribute("user",new Users());
        return "top";
    }
 
