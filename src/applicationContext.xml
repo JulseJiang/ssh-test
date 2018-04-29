@@ -3,7 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--schemaLocation:检查开发人员的语法是否符合spring风格-->
+    <!--依赖注入-->
+    <bean class="cn.julse.predomSSH.db.user.Users" id="users">
+        <property name="user_id" value="1"/>
+        <property name="user_name" value="lele"/>
+    </bean>
     <bean class="cn.julse.predomSSH.spring.TestBean" id="testBean">
         <!--bean:创建共享对象，以单例的模式来节省空间-->
+        <property name="name" value="zhangyi"></property>
+        <property name="user" ref="users" ></property>
+        <!--ref:使用本容器中定义的对象-->
     </bean>
 </beans>
