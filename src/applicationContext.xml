@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <!--schemaLocation:检查开发人员的语法是否符合spring风格-->
     <!--依赖注入-->
-    <bean class="cn.julse.predomSSH.db.user.Users" id="users">
-        <property name="user_id" value="1"/>
-        <property name="user_name" value="lele"/>
+    <!--<bean class="cn.julse.predomSSH.db.user.Users" id="users">-->
+        <!--<property name="user_id" value="1"/>-->
+        <!--<property name="user_name" value="lele"/>-->
+    <!--</bean>-->
+    <!--<bean class="cn.julse.predomSSH.spring.TestBean" id="testBean">-->
+        <!--&lt;!&ndash;bean:创建共享对象，以单例的模式来节省空间&ndash;&gt;-->
+        <!--<property name="name" value="zhangyi"></property>-->
+        <!--<property name="user" ref="users" ></property>-->
+        <!--&lt;!&ndash;ref:使用本容器中定义的对象&ndash;&gt;-->
+    <!--</bean>-->
+
+    <!--注释型注入-->
+    <!--配置spring需要扫描的包-->
+    <context:component-scan base-package="cn.julse.predomSSH.spring"></context:component-scan>
+    <context:annotation-config/>
+
+    <!--数据源连接池 可以链接文件和数据库-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" scope="singleton">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="url" value="jdbc:sqlsever://100.0.101.25"/>
+        <property name="username" value="sa"/>
+        <property name="password" value="sa"/>
     </bean>
-    <bean class="cn.julse.predomSSH.spring.TestBean" id="testBean">
-        <!--bean:创建共享对象，以单例的模式来节省空间-->
-        <property name="name" value="zhangyi"></property>
-        <property name="user" ref="users" ></property>
-        <!--ref:使用本容器中定义的对象-->
+
+    <bean id="jdbcTemplate"  class="org.springframework.jdbc.core.JdbcTemplate" scope="prototype">
+        <property name="dataSource" ref="dataSource"/>
+
     </bean>
+
+        <!--基于数据源 基于声明式的事务管理-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--使用get和set注入值-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
 </beans>

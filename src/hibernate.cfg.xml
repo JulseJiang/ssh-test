@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:sqlserver://100.0.101.25;database=bookshop</property>
+    <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+
+      <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+
+      <!--  显示sql语句  -->
+      <property name="show_sql">true</property>
+
+      <!--  格式化sql语句  -->
+      <property name="format_sql">true</property>
+
+      <!--  根据需要创建数据库  -->
+      <property name="hbm2ddl.auto">create</property>
+      <mapping resource="cn/julse/predomSSH/hibernate/UsersEntity.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -7,7 +7,7 @@
 
 <frameset rows="80,*" cols="*" frameborder="NO" border="0" framespacing="0">
   <%--<%=request.getContextPath() %>--%>
-  <frame src="<%=request.getContextPath()%>/home!top.acion" name="topFrame" scrolling="NO" noresize >
+  <frame src="<%=request.getContextPath()%>home!top.acion" name="topFrame" scrolling="NO" noresize >
   <frameset rows="*" cols="98,*" framespacing="0" frameborder="NO" border="0">
     <frame src="<%=request.getContextPath()%>/left.jsp" name="leftFrame" scrolling="NO" noresize>
     <frame src="<%=request.getContextPath()%>/main.jsp" name="mainFrame">

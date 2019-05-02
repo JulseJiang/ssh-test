@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.julse.predomSSH.hibernate.UsersEntity" table="users" schema="dbo" catalog="bookshop">
+        <id name="userId" column="user_ID"/>
+        <property name="userName" column="user_name"/>
+        <property name="userAddress" column="user_address"/>
+        <property name="userCode" column="user_code"/>
+        <property name="userPhone" column="user_phone"/>
+        <property name="userEmail" column="user_email"/>
+        <property name="userPassword" column="user_password"/>
+        <property name="userPic" column="user_pic"/>
+    </class>
+</hibernate-mapping>

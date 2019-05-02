@@ -37,9 +37,9 @@ public abstract class DBMain<E>
 		//------�������ݿ�����---------------------
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		//------������ݿ�����----------------------
-		 con = DriverManager.getConnection("jdbc:sqlserver://100.1.0.46:1433;databaseName=bookShop_45", "sa", "sa");
-//		 con = DriverManager.getConnection("jdbc:sqlserver://100.0.101.25:1433;databaseName=bookShop", "sa", "sa");
-		con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=bookshop", "sa", "sa");
+//		 con = DriverManager.getConnection("jdbc:sqlserver://100.1.0.46:1433;databaseName=bookShop_45", "sa", "sa");
+		 con = DriverManager.getConnection("jdbc:sqlserver://100.0.101.25:1433;databaseName=bookShop", "sa", "sa");
+//		con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=bookshop", "sa", "sa");
 		//-------��װSQL���---------------------
 		//String sql = "select * from users";
 		 pst =  con.prepareStatement(sql);

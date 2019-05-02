@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.julse.predomSSH.db.user;
+package cn.julse.predomSSH.spring;
 
 import cn.julse.predomSSH.db.userGroup.UserGroup;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,10 +10,13 @@ import org.springframework.stereotype.Component;
 /**
 * creat_user: julse@qq.com creat_date: 2018/3/26
 **/
+@Component("users")
 public class Users {
+	@Value("1")
 	private int user_id;
 	//都是文本形式存储，spring自动强转
 	private int userGroup_id;
+	@Value("xiaolu")
 	private String user_name;
 	private String user_address;
 	private String user_code;

@@ -24,7 +24,7 @@ public class LoginInterceptor implements Interceptor {
         //创建不需要验证的功能路径列表
         ArrayList<String> notLoginList = new ArrayList<String>();
         notLoginList.add("/home/home!home.action");
-//        notLoginList.add("/home/home!login.action");
+        notLoginList.add("/home/home!login.action");
         //获得当前请求路径
         HttpServletRequest request = ServletActionContext.getRequest();
         String path = request.getServletPath();//当前路径，contextPath是项目路径

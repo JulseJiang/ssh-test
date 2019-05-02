@@ -8,7 +8,7 @@
 
 <body>
 <h1 align="center">修改用户</h1>
-<form name="form1" method="post" action="<%=request.getContextPath()%>/user/user!modify.action">
+<form name="form1" method="post" enctype="multipart/form-data" action="<%=request.getContextPath()%>/user/user!modify.action">
   <table width="90%"  border="1" cellspacing="1" cellpadding="1">
 
     <tr>
